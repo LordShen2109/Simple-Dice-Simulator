@@ -1,15 +1,14 @@
 $(document).ready(function() {
+    let gameActive = true;
     let currentRotation = 0;
     $("body").addClass("element");
-    $("#reloadBtn").click(function() {
-        location.reload(); // Reload the page
-    });
     
     // Dice images array (dice1.png to dice6.png)
     const diceImages = ["./images/side_1_pip.png","./images/side_2_pips.png", "./images/side_3_pips.png", "./images/side_4_pips.png", "./images/side_5_pips.png", "./images/side_6_pips.png"];
     // const originalH1Text = $("h1").text();
     $("img ,p").click(function() {
         // currentRotation=0;
+        if (!gameActive) return;
         currentRotation += 90*7; // 90 degrees * 6 rotations
         playSoundFromPosition(1.25);
         function playSoundFromPosition(startTime) {
@@ -39,6 +38,7 @@ $(document).ready(function() {
                 $("h1").text("🤓☝️ You WIN!!!");
                 var music=new Audio('./sounds/makenai_ai_ga_kitto.mp3');
                 music.play();
+                gameActive = false;
             } else {
                 // Reset the h1 text to its original value
                 $("h1").text("Try Again😭");
