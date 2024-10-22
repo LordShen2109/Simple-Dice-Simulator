@@ -13,7 +13,7 @@ $(document).ready(function() {
         currentRotation += 90*7; // 90 degrees * 6 rotations
         playSoundFromPosition(1.25);
         function playSoundFromPosition(startTime) {
-            const sound = new Audio('dice.mp3'); // Get the audio element
+            const sound = new Audio('./sounds/dice.mp3'); // Get the audio element
     
             sound.currentTime = startTime; // Set the starting time
             sound.play(); // Play the sound
@@ -37,7 +37,7 @@ $(document).ready(function() {
             // console.log($("img").attr("src"));
             if ($("img").attr("src").endsWith('side_6_pips.png')) {
                 $("h1").text("🤓☝️ You WIN!!!");
-                var music=new Audio('makenai_ai_ga_kitto.mp3');
+                var music=new Audio('./soundsmakenai_ai_ga_kitto.mp3');
                 music.play();
             } else {
                 // Reset the h1 text to its original value
