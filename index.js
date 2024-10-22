@@ -36,6 +36,7 @@ $(document).ready(function() {
             // console.log($("img").attr("src"));
             if ($("img").attr("src").endsWith('side_6_pips.png')) {
                 $("h1").text("🤓☝️ You WIN!!!");
+                $("p").text("Reload to play again");
                 var music=new Audio('./sounds/makenai_ai_ga_kitto.mp3');
                 music.play();
                 gameActive = false;
