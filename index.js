@@ -37,7 +37,7 @@ $(document).ready(function() {
             // console.log($("img").attr("src"));
             if ($("img").attr("src").endsWith('side_6_pips.png')) {
                 $("h1").text("🤓☝️ You WIN!!!");
-                var music=new Audio('./soundsmakenai_ai_ga_kitto.mp3');
+                var music=new Audio('./sounds/makenai_ai_ga_kitto.mp3');
                 music.play();
             } else {
                 // Reset the h1 text to its original value
