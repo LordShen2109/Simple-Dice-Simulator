@@ -1,13 +1,23 @@
 $(document).ready(function() {
     let currentRotation = 0;
     $("body").addClass("element");
-
+    $("#reloadBtn").click(function() {
+        location.reload(); // Reload the page
+    });
+    
     // Dice images array (dice1.png to dice6.png)
     const diceImages = ["./images/side_1_pip.png","./images/side_2_pips.png", "./images/side_3_pips.png", "./images/side_4_pips.png", "./images/side_5_pips.png", "./images/side_6_pips.png"];
     // const originalH1Text = $("h1").text();
     $("img ,p").click(function() {
         // currentRotation=0;
-        currentRotation += 540; // 90 degrees * 6 rotations
+        currentRotation += 90*7; // 90 degrees * 6 rotations
+        playSoundFromPosition(1.25);
+        function playSoundFromPosition(startTime) {
+            const sound = new Audio('./sounds/dice.mp3'); // Get the audio element
+    
+            sound.currentTime = startTime; // Set the starting time
+            sound.play(); // Play the sound
+        }
         $("img").css("transform", `rotate(${currentRotation}deg)`);
         $("img").addClass("op");
     });
@@ -24,9 +34,11 @@ $(document).ready(function() {
         setTimeout(function() {
             // Change the dice image
             $("img").attr("src", diceImages[randomDiceIndex]);
-            console.log($("img").attr("src"));
+            // console.log($("img").attr("src"));
             if ($("img").attr("src").endsWith('side_6_pips.png')) {
                 $("h1").text("🤓☝️ You WIN!!!");
+                var music=new Audio('./sounds/makenai_ai_ga_kitto.mp3');
+                music.play();
             } else {
                 // Reset the h1 text to its original value
                 $("h1").text("Try Again😭");
