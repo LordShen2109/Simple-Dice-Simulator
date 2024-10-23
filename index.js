@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("img ,p").click(function() {
         // currentRotation=0;
         if (!gameActive) return;
+        gameActive=false;
         currentRotation += 90*7; // 90 degrees * 6 rotations
         playSoundFromPosition(1.25);
         function playSoundFromPosition(startTime) {
@@ -43,6 +44,7 @@ $(document).ready(function() {
             } else {
                 // Reset the h1 text to its original value
                 $("h1").text("Try Again😭");
+                gameActive=true;
             }
             // Reset rotation when new image is set to prevent further rotation affecting it
             // $("img").css("transform", "rotate(0deg)");
