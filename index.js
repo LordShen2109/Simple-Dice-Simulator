@@ -1,6 +1,7 @@
 $(document).ready(function() {
     let gameActive = true;
     let currentRotation = 0;
+    let currentIndex=0;
     $("body").addClass("element");
     
     // Dice images array (dice1.png to dice6.png)
@@ -43,7 +44,24 @@ $(document).ready(function() {
                 gameActive = false;
             } else {
                 // Reset the h1 text to its original value
-                $("h1").text("Try Again😭");
+                // Array of texts
+                const texts = ["Try Again 🙃", "Better Luck Next Time 😔", "Keep Rolling! 🎲","Not good enough 😅","Don't give up 👊"];
+
+                // Variable to track the current index
+                // let currentIndex = 0;
+
+                // Function to set the h1 text in a cycle
+                function cycleText() {
+                // Set the h1 text to the current index text
+                    $("h1").text(texts[currentIndex]);
+
+                // Increment the index and reset if it reaches the end of the array
+                    currentIndex = (currentIndex + 1) % texts.length;
+                }
+
+                // Call cycleText whenever you want to change the text
+                cycleText();
+
                 gameActive=true;
             }
             // Reset rotation when new image is set to prevent further rotation affecting it
