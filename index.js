@@ -37,15 +37,16 @@ $(document).ready(function() {
             $("img").attr("src", diceImages[randomDiceIndex]);
             // console.log($("img").attr("src"));
             if ($("img").attr("src").endsWith('side_6_pips.png')) {
-                $("h1").text("🤓☝️ You WIN!!!");
+                $("h1").text("✌️ You WIN!!! 👏🏁");
                 $("p").text("Reload to play again");
+                
                 var music=new Audio('./sounds/makenai_ai_ga_kitto.mp3');
                 music.play();
                 gameActive = false;
             } else {
                 // Reset the h1 text to its original value
                 // Array of texts
-                const texts = ["Try Again 🙃", "Better Luck Next Time 😔", "Keep Rolling! 🎲","Not good enough 😅","Don't give up 👊"];
+                const texts = ["Try Again 🙃", "Better Luck Next Time 😔", "Keep Rolling! 🎲","Not good enough 😅","Don't give up 👊","Keep at it 🙌"];
 
                 // Variable to track the current index
                 // let currentIndex = 0;
