@@ -1,12 +1,9 @@
-/* body{
-    background-color: #4CC9FE;
-} */
 h1{
     color: #7E60BF;
     text-align: center;
     font-size: 80px;
-    font-family:'Kablammo' ;
-    text-shadow:3px 3px orange;
+    font-family:'Kanit' ;
+    text-shadow:2px 2px #433878;
 }
 .container{
     display: flex;
@@ -29,8 +26,8 @@ p{
     font-weight: 900;
 }
 p:hover{
-  background-color: #FFEB00;
-  border-radius: 5%;
+  background-color: #FABC3F;
+  border-radius: 10%;
   opacity: 0.80;
   font-size: 38px;
   position: relative;
@@ -61,7 +58,6 @@ img.op{
     opacity: 0.5;
 }
 
-/* Define keyframes for the background color animation */
 @keyframes changeBackground {
     0% {
       background-color: #4CC9FE; 
@@ -74,12 +70,12 @@ img.op{
     }
   }
   
-  /* Apply the animation to the body or any element */
+  
   .element {
-    animation: changeBackground 5s infinite;
+    animation: changeBackground 6s infinite;
     animation-timing-function: ease-in-out;
   }
- @media(max-width:1400px){
+  @media(max-width:1400px){
     h1{
       font-size: 40px;
     }
@@ -100,8 +96,6 @@ img.op{
     }
   }
 
-
-  
 
 
   
